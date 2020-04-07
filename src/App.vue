@@ -1,19 +1,30 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <a-config-provider :autoInsertSpaceInButton="false">
+        <router-view class="ii-main-page" />
+    </a-config-provider>
 </template>
 
-<style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+<script>
+export default {
+    data() {
+        return {
+        };
+    }
+}
+</script>
+
+<style lang="stylus" scoped>
+@import './styles/base';
+
+html, body, #app {
+    height: 100%;
+}
+
+#app {
+    v-box();
+}
+
+.ii-main-page {
+    flex: 100% 1 1 !important;
+}
 </style>
